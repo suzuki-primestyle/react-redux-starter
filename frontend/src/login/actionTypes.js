@@ -1,0 +1,1 @@
+export const LOGIN_FORM_UPDATED = 'login/LOGIN_FORM_UPDATED';
