@@ -1,3 +1,5 @@
 let mix = require('laravel-mix');
 
-mix.react('frontend/src/app.js', 'public/js/app.js');
+mix
+  .setPublicPath('public')
+  .react('frontend/src/app.js', 'public/js/app.js');
