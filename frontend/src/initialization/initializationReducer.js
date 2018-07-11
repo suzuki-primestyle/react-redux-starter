@@ -1,21 +1,15 @@
 import * as types from './actionTypes';
 
 const initialState = {
-  isAuthenticated: false,
+  saidHello: false,
 };
 
 export default function authReducer(state = initialState, action) {
   switch (action.type) {
-    case types.AUTHENTICATION_SUCCEEDED: {
+    case types.SAY_HELLO_DONE: {
       return {
         ...state,
-        isAuthenticated: true,
-      };
-    }
-    case types.LOGOUT_SUCCEEDED: {
-      return {
-        ...state,
-        isAuthenticated: false,
+        saidHello: true,
       };
     }
     default:

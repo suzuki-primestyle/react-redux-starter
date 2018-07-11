@@ -1,4 +1,5 @@
 import * as types from './actionTypes';
+import { loginSucceeded } from '../auth/action';
 
 export function updateLoginForm(name, value) {
   return {
@@ -8,19 +9,20 @@ export function updateLoginForm(name, value) {
   };
 }
 
-export function loginSucceeded() {
+export function clearLoginForm() {
   return {
-    type: authTypes.AUTHENTICATION_SUCCEEDED,
+    type: types.CLEAR_LOGIN_FORM,
   };
 }
 
 export function submitLoginForm() {
   return (dispatch, getState) => {
-    const { email, name, password } = getState().login;
-    console.log(email, name, password);
+    const { email, password } = getState().login;
+    console.log(email, password);
     // access to api
     setTimeout(() => {
-      dispatch(LoginSucceeded());
-    }, 2000);
+      dispatch(clearLoginForm());
+      dispatch(loginSucceeded());
+    }, 1000);
   }
 }

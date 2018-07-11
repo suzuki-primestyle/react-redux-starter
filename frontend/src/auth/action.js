@@ -1,12 +1,21 @@
 import * as types from './actionTypes';
 
-export function hello() {
+export function loginSucceeded() {
+  return {
+    type: types.AUTHENTICATION_SUCCEEDED,
+  };
+}
+
+export function logoutSucceeded() {
+  return {
+    type: types.LOGOUT_SUCCEEDED,
+  };
+}
+
+export function requestLogout() {
   return (dispatch, getState) => {
-    const auth = getState().auth;
-    if (auth.isAuthenticated) {
-      console.log('probably I am authenticated');
-    } else {
-      console.log('probably I am not authenticated');
-    }
+    setTimeout(() => {
+      dispatch(logoutSucceeded());
+    }, 1000);
   }
 }

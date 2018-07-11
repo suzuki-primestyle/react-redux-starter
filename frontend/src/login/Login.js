@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateLoginForm, submitLoginForm } from 'action';
+import { updateLoginForm, submitLoginForm } from './action';
 
 class Login extends Component {
   render() {
-    const { email, name, password } = this.props.login;
-    const { handleChange } = this.props;
+    const { email, password } = this.props.login;
+    const { handleChange, handleSubmit } = this.props;
     return (
       <div>
-        name: <input name="name" value={name} onChange={handleChange} /><br />
         email: <input name="email" value={email} onChange={handleChange} /><br />
         password: <input name="password" value={password} onChange={handleChange} /><br />
+        <button onClick={handleSubmit}>Submit</button>
       </div>
     );
   }
