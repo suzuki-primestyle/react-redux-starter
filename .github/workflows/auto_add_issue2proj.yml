@@ -16,8 +16,7 @@ jobs:
     steps:
       - uses: alex-page/github-project-automation-plus@v0.1.0
         with:
-          secret: GH_PAT
           project: Backlog
           column: Triage
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GH_PAT }}
           
